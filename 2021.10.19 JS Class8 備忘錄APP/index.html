@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="shiloz" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+								width: 90vw;
+								height: 100vh;
+								overflow: auto;
+								scroll-behavior: auto;
+
+      }
+						body::-webkit-scrollbar {
+  display: none;
+}
+#addOn > fieldset:last-child > legend::before{
+content: "Last";
+/* background-color: red; */
+}
+#addOn > fieldset:first-child > legend::before{
+content: "Newest";
+/* background-color: red; */
+}
+      fieldset {
+        width: 30vw;
+        height: 90vh;
+        padding: 10px;
+        /* max-width: 100%; */
+        line-height: 1.5;
+        border-radius: 5px;
+        border: 1px solid rgba(128, 128, 128, 0.39);
+        /* box-shadow: 1px 1px 1px #999; */
+      }
+						fieldset.addNote{
+							width: 60vw;
+        height: auto;
+        padding: 10px;
+        max-width: 100%;
+        line-height: 1.5;
+        border-radius: 5px;
+        border: 1px solid rgba(128, 128, 128, 0.39);
+						}
+						pre{
+							margin: 0%;
+
+						}
+						#addOn{
+							/* width: 40%; */
+							/* height: 90%; */
+							display: flex;
+							flex-direction: row;
+							flex-wrap: wrap;
+						}
+      legend,
+      label {
+        color: gray;
+      }
+      textarea {
+        min-width: 30vw;
+        min-height: 50vh;
+        padding: 10px;
+        margin-bottom: 20px;
+        max-width: 40vw;
+        max-height: 60vh;
+        line-height: 1.5;
+        border-radius: 5px;
+        border: 1px solid rgba(128, 128, 128, 0.39);
+        box-shadow: 1px 1px 3px rgba(153, 153, 153, 0.096);
+      }
+      input,
+      button {
+        /* line-height: 1.5; */
+        color: gray;
+        background-color: transparent;
+        width: 101%;
+        padding: 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 1px rgba(153, 153, 153, 0.096);
+      }
+      input {
+        width: 100%;
+      }
+
+      button:hover {
+        color: rgb(32, 32, 32);
+
+								box-shadow: 1px 1px 2px rgba(153, 153, 153, 0.377);
+      }
+      textarea::selection {
+        color: #ccc;
+      }
+      textarea::placeholder,
+      input::placeholder {
+        color: #ccc;
+      }
+
+      textarea:focus-visible,
+      input:focus-visible {
+        /* color: #ccc; */
+        outline-color: rgba(128, 128, 128, 0.39);
+      }
+      ::-webkit-calendar-picker-indicator {
+        opacity: 0.3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <form> -->
+    <fieldset>
+      <legend>新增</legend>
+      <textarea name="" id="note" placeholder="開始新增記事吧!"></textarea>
+      <label for="date">日期時間</label>
+      <input type="datetime-local" name="" id="date" />
+      <button class="button add" id="addbtn">新增</button>
+      <button class="button del" id="delbtn">刪除最後一筆記事</button>
+    </fieldset>
+    <div id="addOn"></div>
+    <!-- </form> -->
+    <script src="./index.js"></script>
+  </body>
+</html>
